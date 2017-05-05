@@ -2,6 +2,7 @@ package com.matthewcasperson.elidetest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -9,8 +10,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @EnableTransactionManagement    // Elide requires transaction support, which we enable here
+@Import(ElideConfig.class)
 public class Application {
-    public static void main(final String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+  public static void main(final String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 }
