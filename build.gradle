@@ -9,7 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.2.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
     }
 }
 
@@ -35,8 +35,15 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
+
+    compile 'junit:junit'
+    compile 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    compile 'org.springframework.boot:spring-boot-starter-test'
 
     /*
         These are the Elide dependencies
@@ -52,7 +59,7 @@ dependencies {
     compile 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
     compile 'org.hibernate:hibernate-core:5.1.0.Final'
     /*
-        This is so we can connect to the MySQL database
+        This is db stuff
      */
     compile 'mysql:mysql-connector-java:5.1.38'
     compile 'com.h2database:h2:1.4.193'
