@@ -2,6 +2,7 @@ package com.matthewcasperson;
 
 import com.matthewcasperson.elidetest.ParentRepository;
 import com.matthewcasperson.elidetest.jpa.Parent;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,12 @@ public class Test {
     mvc = MockMvcBuilders
             .webAppContextSetup(context)
             .build();
+  }
+
+  @After
+  public void tearDown() {
+    // without transaction manual delete the repo
+    parentRepositor.deleteAll();
   }
 
   @org.junit.Test
