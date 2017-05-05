@@ -44,7 +44,7 @@ public class Test {
   }
 
   @org.junit.Test
-  public void cannotKickLeaderFromClan() throws Exception {
+  public void getClanData() throws Exception {
     assertEquals(0, parentRepositor.count());
     Parent myEntity = new Parent();
     myEntity.setName("Dragonfire");
